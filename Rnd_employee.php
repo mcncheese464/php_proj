@@ -12,7 +12,35 @@ class RndEmployee{
 	public $work_days;
 	public $start_date;
 	public $end_date;
-
+ 
+ 	function __construct($name, $position, $salary, $location, $work_days, $start_date, $end_date){
+                $this->name = $name;
+                $this->position = $position;
+                $this->salary = $salary;
+                $this->salary = $salary;
+                $this->location = $location;
+                $this->work_days = $work_days;
+                $this->start_date = $start_date;
+        }
+        function hire($name, $position, $salary, $location, $work_days, $start_date, $end_date){
+                $this->name = $name;
+                $this->position = $position;
+                $this->salary = $salary;
+                $this->salary = $salary;
+                $this->location = $location;
+                $this->work_days = $work_days;
+                $this->start_date = $start_date;
+        }
+	function fire($name, $end_date){
+		$this->name = $name;
+		$this->position = 0;
+		$this->salary = 0;
+		$this->salary = 0;
+		$this->location = 0;
+                $this->work_days = 0;
+		$this->start_date = 0;
+		$this->end_date = $end_date;
+	}
 	// Setters for all properties
 	function set_name($name){
 		$this->name = $name;
@@ -63,7 +91,20 @@ class RndEmployee{
 
 }
 
+class Developer extends RndEmployee {
+	function message(){
+		echo "This is a message from Developer $name<br>";
+	}
 
+}
+class Tester extends RndEmployee {
+}
+class SystemAdmin extends RndEmployee {
+}
+
+$x = new Developer("John", "Backend", "333", "TLV", "1-5", "01012024", "01012025");
+$x->message();
+echo "name of <br>".$x->get_name();
 
 ?>
 </body>
